@@ -1,9 +1,18 @@
+/**
+ * @author Zafrin Minoti (zafrin.minoti@gmail.com)
+ * @date February 28, 2017
+ * @title DriverExam Classfile
+ * Book - Starting Out with Java, 6e
+ * Chapter 7 - Problem # 6
+ * CSC 210 - Computer Programming 2
+ * Prof. Persaud
+ */
+
 public class DriverExam
 {
 	//Fields
-	private char[] _correctAns = {'B','D','A','A','C',
-		'A','B','A','C','D','B','C','D','A','D','C',
-		'C','B','D','A'};
+	private char[] _correctAns = {'B','D','A','A','C','A','B',
+		'A','C','D','B','C','D','A','D','C','C','B','D','A'};
 	private char[] _studentAns = new char[_correctAns.length];
 	private boolean[] _eval = new boolean[_correctAns.length];
 
@@ -12,18 +21,29 @@ public class DriverExam
 	{
 		_correctAns = _correctAns;
 		_studentAns = studentAns;
-
-		boolean[] eval = new boolean[_correctAns.length];
-		for (int i=0; i<_correctAns.length; i++) {
-			if (_studentAns[i] == _correctAns[i])
-				eval[i] = true;
-			else
-				eval[i] = false;
-		}
-		_eval = eval;
+		_eval = evaluateStudent();
 	}
 
-	// correct
+	/**
+		A private mutator method evaluating a student's answears.
+		It sets values to the private _eval field.
+		@return _eval Boolean array holding evaluated values of 
+		corect and wrong answears 
+	*/
+	private boolean[] evaluateStudent() {
+		for (int i=0; i<_correctAns.length; i++) {
+			if (_studentAns[i] == _correctAns[i])
+				_eval[i] = true;
+			else
+				_eval[i] = false;
+		}
+		return _eval;
+	}
+
+	/**
+		This method gets a count of how many a student got right
+		@return count Total number of correct answears
+	*/
 	public int totalCorrect() {
 		int count = 0;
 		boolean passed = false;
@@ -34,27 +54,32 @@ public class DriverExam
 		return count;
 	}
 
-	// passed or not
+	/**
+		This method determine if the student passed or not
+		@return pass A boolean value evaluating is a student passed or not
+	*/
 	public boolean passed() {
-		int count = totalCorrect();
 		boolean pass = false;
-		// int count = 0;
-		// boolean passed = false;
-		// for (i=0; i<_eval.length; i++) {
-		// 	if _(eval[i] == true)
-		// 		count++;
-		if (count>15)
+		if (totalCorrect()>15)
 			pass = true;
 		// }
 		return pass;
 	}
 
-	// total incorrect
+	/**
+		This method counted how many question a student missed
+		@return Number of questions that were incorrect
+	*/
 	public int totalIncorrect() {
 		return _correctAns.length - totalCorrect();
 	}
 
-	// Questions missed
+	/**
+		This method gets all the question a student got incorrect.
+		In other words questions that the student missed.
+		note that the question number is index+1
+		@return missed An array of the question numbers
+	*/
 	public int[] questionsMissed() {
 		int[] missed = new int[totalIncorrect()];
 		int missedIndex = 0; 
