@@ -1,7 +1,7 @@
 /**
  * @author Zafrin Minoti (zafrin.minoti@gmail.com)
  * @date February 28, 2017
- * @title DriverExam Demo
+ * @title Lottery Classfile
  * Book - Starting Out with Java, 6e
  * Chapter 7 - Problem # 10
  * CSC 210 - Computer Programming 2
