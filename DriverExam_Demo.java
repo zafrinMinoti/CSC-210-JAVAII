@@ -63,22 +63,6 @@ public class DriverExam_Demo
 			} while (letter != 'A' && letter != 'B' && letter != 'C' && letter != 'D');
 
 			ans[i] = letter;
-
-			
-			// System.out.print(i+1 +". ");
-			// letter = kb.nextLine().charAt(0);
-			// letter = Character.toUpperCase(letter);
-			// System.out.print(letter);
-			
-			// while (letter != 'A' && letter != 'B' && letter != 'C' && letter != 'D')
-			// {
-			// 	System.out.println("Oops... that's an invalid input\nTry again...");
-			// 	System.out.print(i+1 +". ");
-			// 	letter = kb.nextLine().charAt(0);
-			// 	letter = Character.toUpperCase(letter);
-			// }
-
-			ans[i] = letter;
 		}
 	return ans;
 	}
