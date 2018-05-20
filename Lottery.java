@@ -51,7 +51,8 @@ public class Lottery
 				matchCount +=1;
 			}			
 		}
-		if (matchCount == 5) {
+		// prof used the winning message inside main in dem
+o		if (matchCount == 5) {
 			System.out.println("Congratulations!!!" +
 				"\nYou won the grand prize!!!");
 		}

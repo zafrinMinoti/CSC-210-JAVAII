@@ -1,0 +1,45 @@
+public class Employee
+{
+	private String name, empNo;
+	private int hiredDate;
+
+	// Constructors
+	public Employee()
+	{
+
+	}
+
+	public Employee(String name, int empNo, int hiredDate)
+	{
+		this.name = name;
+		this.empNo = empNo + "-L";
+		this.hiredDate = hiredDate;
+	}
+
+	// Accessors
+
+	// Mutators
+	public void setEmpNo()
+	{
+		String empNo = 
+		if(isValidEmpNo(empNo;)) {
+			this.empNo = empNo;
+		}
+	}
+
+	// Validation
+	private boolean isValidEmpNo(String e)
+	{
+		e = this.empNo;
+		boolean valid = true;
+		char[] chars = e.toCharArray()
+		if(e.length()!=5):
+			valid = false;
+		for(int i=0; i<3; i++) {
+			if(chars[i]<0 || chars[i]>9) {
+				valid = false;
+			}
+		} 
+		return valid;
+	}
+}
